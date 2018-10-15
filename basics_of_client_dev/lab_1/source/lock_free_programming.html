@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Lock free programming</title>
+	<link type="text/css" rel="stylesheet" href="resource/style.css">
+</head>
+<body>
+
+	<!-- main site frame -->
+	<div class="top_panel">
+
+		<a href="main.html">
+			<span>
+				<p>Home</p>
+			</span>
+		</a>
+
+		<a href="game_engine.html">
+			<span>
+				<p>game engine</p>
+			</span>
+		</a>
+
+		<a href="lock_free_programming.html">
+			<span>
+				<p>lock free</p>
+			</span>
+		</a>
+
+		<a href="reflection_system.html">
+			<span>
+				<p>reflection</p>
+			</span>
+		</a>
+
+		<a href="tutorial_cmake.html">
+			<span>
+				<p>cmake</p>
+			</span>
+		</a>
+	</div>
+
+	<H1 class="title">lock free programming</H1>
+
+	<div class="body_article">
+		<p class="article_text">Lock-free programming is a challenge, not just because of the complexity of the task itself, but because of how difficult it can be to penetrate the subject in the first place.</p>
+		<p class="article_text">Since then, a lot of good material has been written, ranging from abstract theory and proofs of correctness to practical examples and hardware details. I’ll leave a list of references in the footnotes. At times, the information in one source may appear orthogonal to other sources: For instance, some material assumes sequential consistency, and thus sidesteps the memory ordering issues which typically plague lock-free C/C++ code. The new C++11 atomic library standard throws another wrench into the works, challenging the way many of us express lock-free algorithms.</p>
+		<p class="article_text">I was fortunate in that my first introduction to lock-free (also known as lockless) programming was Bruce Dawson’s excellent and comprehensive white paper, Lockless Programming Considerations. And like many, I’ve had the occasion to put Bruce’s advice into practice developing and debugging lock-free code on platforms such as the Xbox 360.</p>
+		<p class="article_text">In this post, I’d like to re-introduce lock-free programming, first by defining it, then by distilling most of the information down to a few key concepts. I’ll show how those concepts relate to one another using flowcharts, then we’ll dip our toes into the details a little bit. At a minimum, any programmer who dives into lock-free programming should already understand how to write correct multithreaded code using mutexes, and other high-level synchronization objects such as semaphores and events.</p>
+		<p>My opinion changed once I realized that, using only semaphores and atomic operations, it’s possible to implement all of the following primitives:</p>
+		<ol>
+  <li><p>A Lightweight Mutex</p></li>
+  <li><p>A Lightweight Auto-Reset Event Object</p></li>
+  <li><p>A Lightweight Read-Write Lock</p></li>
+  <li><p>Another Solution to the Dining Philosophers Problem</p></li>
+  <li><p>A Lightweight Semaphore With Partial Spinning</p></li>
+</ol>
+	</div>
+
+</body>
+
+</html>
