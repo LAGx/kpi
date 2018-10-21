@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>learn cmake</title>
+	<link type="text/css" rel="stylesheet" href="resource/style.css">
+</head>
+<body>
+
+	<!-- main site frame -->
+	<div class="top_panel">
+
+		<a href="main.html">
+			<span>
+				<p>Home</p>
+			</span>
+		</a>
+
+		<a href="game_engine.html">
+			<span>
+				<p>game engine</p>
+			</span>
+		</a>
+
+		<a href="lock_free_programming.html">
+			<span>
+				<p>lock free</p>
+			</span>
+		</a>
+
+		<a href="reflection_system.html">
+			<span>
+				<p>reflection</p>
+			</span>
+		</a>
+
+		<a href="tutorial_cmake.html">
+			<span>
+				<p>cmake</p>
+			</span>
+		</a>
+	</div>
+
+	<H1 class="title">CMake tutorial</H1>
+
+	<div class="body_article">
+		<p class="article_text">Mastering CMake as separate issues but seeing how they all work together in an example project can be very helpful. This tutorial can be found in the Tests/Tutorial directory of the CMake source code tree. Each step has its own subdirectory containing a complete copy of the tutorial for that step.
+
+See also the introductory sections of the cmake-buildsystem(7) and cmake-language(7) manual pages for an overview of CMake concepts and source tree organization.</p>
+		<p class="article_text">The most basic project is an executable built from source code files. For simple projects a two line CMakeLists.txt file is all that is required. This will be the starting point for our tutorial. The CMakeLists.txt file looks like:</p>
+		<p class="article_text">Note that this example uses lower case commands in the CMakeLists.txt file. Upper, lower, and mixed case commands are supported by CMake. The source code for tutorial.cxx will compute the square root of a number and the first version of it is very simple, as follows:</p>
+		<p class="article_text">Adding a Version Number and Configured Header File
+The first feature we will add is to provide our executable and project with a version number. While you can do this exclusively in the source code, doing it in the CMakeLists.txt file provides more flexibility. To add a version number we modify the CMakeLists.txt file as follows:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Platform</strong></td>
+<td><strong>Files</strong></td>
+</tr>
+<tr>
+<td>Windows win64-x64 Installer: <b>Installer tool has changed. Uninstall CMake 3.4 or lower first!</b></td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-win64-x64.msi">cmake-3.13.0-rc1-win64-x64.msi</a></td>
+</tr>
+<tr>
+<td>Windows win64-x64 ZIP</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-win64-x64.zip">cmake-3.13.0-rc1-win64-x64.zip</a></td>
+</tr>
+<tr>
+<td>Windows win32-x86 Installer: <b>Installer tool has changed. Uninstall CMake 3.4 or lower first!</b></td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-win32-x86.msi">cmake-3.13.0-rc1-win32-x86.msi</a></td>
+</tr>
+<tr>
+<td>Windows win32-x86 ZIP</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-win32-x86.zip">cmake-3.13.0-rc1-win32-x86.zip</a></td>
+</tr>
+<tr>
+<td>Mac OS X 10.7 or later</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-Darwin-x86_64.dmg">cmake-3.13.0-rc1-Darwin-x86_64.dmg</a></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-Darwin-x86_64.tar.gz">cmake-3.13.0-rc1-Darwin-x86_64.tar.gz</a></td>
+</tr>
+<tr>
+<td>Linux x86_64</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-Linux-x86_64.sh">cmake-3.13.0-rc1-Linux-x86_64.sh</a></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><a href="/files/v3.13/cmake-3.13.0-rc1-Linux-x86_64.tar.gz">cmake-3.13.0-rc1-Linux-x86_64.tar.gz</a></td>
+</tr>
+</tbody>
+</table>
+	</div>
+
+</body>
+
+</html>
