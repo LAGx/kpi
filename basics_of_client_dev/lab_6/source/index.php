@@ -20,15 +20,24 @@
 		echo "</tr>";
 
 		$line_amount--;
+		$fourth_cell = 0;
 
 		for($line = 0; $line < $line_amount; $line++ ){
 			echo "<tr>";
 
 			$very_difficult_calculations = $line_amount - $line;
 			
-			echo "<td colspan=\"$very_difficult_calculations\">&nbsp;</td>";
-    		echo "<td rowspan=\"$very_difficult_calculations\">&nbsp;</td>"; 
-			
+			$fourth_cell += 2;
+
+			if($fourth_cell == 4){
+				echo "<td colspan=\"$very_difficult_calculations\">4</td>";
+    			echo "<td rowspan=\"$very_difficult_calculations\">&nbsp;</td>"; 
+    			$fourth_cell = 0;
+			}else{
+				echo "<td colspan=\"$very_difficult_calculations\">&nbsp;</td>";
+    			echo "<td rowspan=\"$very_difficult_calculations\">&nbsp;</td>"; 
+			}
+
 			echo "</tr>";
 		}
 
@@ -40,14 +49,24 @@
 
 		echo "<table border=\"1\">";
 
+		$fourth_cell = 0;
+
 		for($line = 0; $line < $line_amount-1; $line++ ){
 			echo "<tr>";
 
 			$very_difficult_calculations = $line_amount - $line;
 			
-			echo "<td colspan=\"$very_difficult_calculations\">&nbsp;</td>";
-    		echo "<td rowspan=\"$very_difficult_calculations\">&nbsp;</td>"; 
-			
+			$fourth_cell += 2;
+
+			if($fourth_cell == 4){
+				echo "<td colspan=\"$very_difficult_calculations\">&nbsp;</td>";
+    			echo "<td rowspan=\"$very_difficult_calculations\">4</td>"; 
+    			$fourth_cell = 0;
+			}else{
+				echo "<td colspan=\"$very_difficult_calculations\">&nbsp;</td>";
+    			echo "<td rowspan=\"$very_difficult_calculations\">&nbsp;</td>"; 
+			}
+
 			echo "</tr>";
 		}
 
@@ -62,14 +81,28 @@
 	function formTable_type3($colunm_amount, $line_amount){
 		echo "<table border=\"1\">";
 
+		$fourth_cell = 0;
+
 		//init phase
 		echo "<tr>";
 		for($colunm = 0; $colunm < $colunm_amount; $colunm++){
-			
-			if ($colunm%2 == 0)
-				echo "<td>&nbsp;</td>";
-			else
-				echo "<td rowspan=\"2\">&nbsp;<br/>&nbsp;</td>";
+			$fourth_cell += 1;
+
+			if($fourth_cell == 4){
+				if ($colunm%2 == 0){
+					echo "<td>&nbsp;</td>";
+				}else{
+					echo "<td rowspan=\"2\">4<br/>&nbsp;</td>";
+				}
+
+				$fourth_cell = 0;
+			}else{
+				if ($colunm%2 == 0){
+					echo "<td>&nbsp;</td>";
+				}else{
+					echo "<td rowspan=\"2\">&nbsp;<br/>&nbsp;</td>";
+				}
+			}
 
 		}
 		echo "</tr>";
@@ -81,16 +114,37 @@
 			echo "<tr>";
 			if($line%2 == 1){
 				for($colunm = 0; $colunm < $colunm_amount/2; $colunm++){
-					echo "<td rowspan=\"2\">&nbsp;</td>";
+					$fourth_cell += 1;
+					if($fourth_cell == 4){
+						echo "<td rowspan=\"2\">4</td>";
+						$fourth_cell = 0;
+					}
+					else{
+						echo "<td rowspan=\"2\">&nbsp;</td>";
+					}
 				}
 			}else{
 				if($line == $line_amount-1){
 					for($colunm = 0; $colunm < ($colunm_amount-1)/2; $colunm++){
-						echo "<td rowspan=\"2\">&nbsp;</td>";
+						$fourth_cell += 1;
+						if($fourth_cell == 4){
+							echo "<td rowspan=\"2\">4</td>";
+							$fourth_cell = 0;
+						}
+						else{
+							echo "<td rowspan=\"2\">&nbsp;</td>";
+						}
 					}
 				}else{
 					for($colunm = 0; $colunm < ($colunm_amount-1)/2; $colunm++){
-						echo "<td rowspan=\"2\">&nbsp;<br/>&nbsp;</td>";
+						$fourth_cell += 1;
+						if($fourth_cell == 4){
+							echo "<td rowspan=\"2\">4<br/>&nbsp;</td>";
+							$fourth_cell = 0;
+						}
+						else{
+							echo "<td rowspan=\"2\">&nbsp;<br/>&nbsp;</td>";
+						}
 					}
 				}
 			}
@@ -126,14 +180,23 @@
 			
 		}
 
+		$fourth_cell = 0;
+
 		//use data
 		for($line = 0; $line < $line_amount; $line++){
 			echo "<tr>";
 			for($column = 0; $column < $colunm_amount; $column++ ){
 				$curr_cos = $generator_data[$column][$line];
 				$curr_pers = 100 * $curr_cos / ($colunm_amount*$colunm_amount-1);
-
-				echo "<td width=\"$curr_pers%\"  colspan=\"$curr_cos\">&nbsp;</td>"; 
+				
+				$fourth_cell += 1;
+				
+				if($fourth_cell == 4){
+					echo "<td width=\"$curr_pers%\"  colspan=\"$curr_cos\">4</td>"; 
+					$fourth_cell = 0;
+				}else{
+					echo "<td width=\"$curr_pers%\"  colspan=\"$curr_cos\">&nbsp;</td>";
+				}
 			}
 			echo "</tr>";
 		}
