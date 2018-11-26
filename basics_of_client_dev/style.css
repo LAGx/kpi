@@ -1,0 +1,45 @@
+body {
+    background-color: #1B1328;
+    padding:2%;
+    margin:0;
+    text-align: center;
+}
+
+body, html { 
+	width: 100%; 
+	height: 100%; 
+}
+
+
+h1{
+	color: #b50e7a;
+	padding:0;
+    margin:0;
+    line-height: 1.6;
+}
+
+
+.labas_container{
+	background-color: #120A1E;
+	margin: 2%;
+	margin-left: 15%;
+	margin-right: 15%;
+	border: solid 1px #6F0048;	
+	height: 10%;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 250ms;
+    border-radius: 2px;
+}
+
+.labas_container:hover{
+	background-color: #1D142C;
+	border: solid 2px #6F0048;	
+}
+
+
+a{
+	color: #ded0d9;
+	text-decoration: none;
+}
