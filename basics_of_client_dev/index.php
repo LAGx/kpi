@@ -45,5 +45,11 @@
 	</div>
 </a>
 
+<a href="lab_7/source/index.php">
+	<div class="labas_container">
+		<p>laba 7</p>
+	</div>
+</a>
+
 </body>
 </html>
