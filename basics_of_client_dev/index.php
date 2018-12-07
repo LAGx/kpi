@@ -51,5 +51,11 @@
 	</div>
 </a>
 
+<a href="lab_8/source/index.html">
+	<div class="labas_container">
+		<p>laba 8</p>
+	</div>
+</a>
+
 </body>
 </html>

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/common_types/igame_object.h
+SFML/Graphics.hpp
+-
+string
+-
+
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/main_game_loop.h
+window.h
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/window.h
+
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/scene.h
+list
+-
+memory
+-
+common_types/igame_object.h
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/common_types/igame_object.h
+
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/window.h
+SFML/Graphics.hpp
+-
+string
+-
+
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/main.cpp
+SFML/Graphics.hpp
+-
+core/window.h
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/window.h
+core/main_game_loop.h
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/main_game_loop.h
+core/scene.h
+/home/kvark/kpi/kpi_reps/Ro_graph_editor/core/scene.h
+

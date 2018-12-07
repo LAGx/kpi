@@ -1,0 +1,5 @@
+/home/kvark/tools/cpp/clion-2018.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/kvark/kpi/kpi_reps/Ro_graph_editor
+-- Found SFML .. in /usr/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kvark/kpi/kpi_reps/Ro_graph_editor/cmake-build-debug

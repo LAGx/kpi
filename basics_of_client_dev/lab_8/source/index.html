@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS laba 8</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+	<script src="functions.js" type="text/javascript"></script>
+</head>
+<body onload="main();">
+
+<p> 1 | calculate tringle square on focus </p>
+
+<p style="display:inline;">A x</p>
+<input id="tringle_square_x_A" type="number" value="0"/><br>
+<p style="display:inline;">A y</p>
+<input id="tringle_square_y_A" type="number" value="0"/><br><br>
+
+<p style="display:inline;">B x</p>
+<input id="tringle_square_x_B" type="number" value="0"/><br>
+<p style="display:inline;">B y</p>
+<input id="tringle_square_y_B" type="number" value="0"/><br><br>
+
+<p style="display:inline;">C x</p>
+<input id="tringle_square_x_C" type="number" value="0"/><br>
+<p style="display:inline;">C y</p>
+<input id="tringle_square_y_C" type="number" value="0"/><br><br>
+
+<p style="color: #b50e7a;" id="tringle_square_error"></p>
+<p style="background-color: #3c15a0;" id="tringle_square_answer" onmouseover="calculate_tringle_square();"> -  -  - </p>
+
+<hr/>
+
+<!------------------------------------------------------------------------->
+<p> 2 | swap text </p>
+
+<p style="display:inline;">text A:</p>
+<input id="swap_text_A" type="text" value=" - - - "/><br>
+<p style="display:inline;">text B:</p>
+<input id="swap_text_B" type="text" value=" - - - " onblur="swipe_text();"/><br><br>
+
+<hr/>
+
+<!------------------------------------------------------------------------->
+<p> 3 | bigger number </p>
+
+<p style="display:inline;">input numbers (use ','): </p>
+<input id="bigger_number" type="text" value="0" onblur="find_bigger_number();"/><br>
+
+<p id="answer_bigger_number">bigger: none</p>
+
+<hr/>
+
+<!------------------------------------------------------------------------->
+<p> 4 | is tringle possible </p>
+
+<p style="display:inline;">a: </p>
+<input  id="input_is_tringle_possible_a" type="number" value="0" onblur="is_tringle_possible();"/><br>
+<p style="display:inline;">b: </p>
+<input id="input_is_tringle_possible_b" type="number" value="0" onblur="is_tringle_possible();"/><br>
+<p style="display:inline;">c: </p>
+<input id="input_is_tringle_possible_c" type="number" value="0" onblur="is_tringle_possible();"/><br>
+
+<p id="output_is_tringle_possible">is possible: none</p>
+<hr/>
+<!------------------------------------------------------------------------->
+<p> 5 | resize image </p>
+
+<img src="resource/cat.jpg" id="cat_image" height="200" width="200" onmouseover="set_cat_image_bigger();" onmouseout="set_cat_image_smaller();">
+<hr/>
+
+<!------------------------------------------------------------------------->
+<p> 6 | moveable hr </p>
+
+<button onclick="bigger_moveable_hr();"> bigger </button>
+<button onclick="up_moveable_hr();"> up </button>
+<button onclick="down_moveable_hr();"> down </button>
+<button onclick="smaller_moveable_hr();"> smaller </button>
+
+<hr id="movable_hr" width="300" style="
+margin-left: auto;
+margin-right: auto;
+height: 10px;
+background-color:#f3f6db;
+color:#f3f6db;
+border: 0 none;"/>
+
+<hr/>
+
+<p>select course: </p>
+<select id="answer_ankete_course" onchange="on_select_answer_ankete();">
+  <option value="300">bad cource</option>
+  <option value="500">better cource</option>
+  <option value="1000">good cource</option>
+  <option value="35000">fantastic course</option>
+</select>
+
+<p>duration: </p>
+<select id="answer_ankete_duration" onchange="on_select_answer_ankete();">
+  <option value="1">1 month</option>
+  <option value="3">3 month</option>
+  <option value="12">1 year</option>
+  <option value="200500">100500 years</option>
+</select>
+
+<p>language: </p>
+<select id="answer_ankete_language" onchange="on_select_answer_ankete();">
+  <option value="700">english</option>
+  <option value="1500">russian</option>
+  <option value="1000">spain</option>
+  <option value="14000">ugandian</option>
+</select>
+
+<p>zvit_form: </p>
+<select id="answer_ankete_zvit" onchange="on_select_answer_ankete();">
+  <option value="2">complete</option>
+  <option value="1">particle</option>
+</select>
+
+<p>result price course: </p><p id="result_price_cource">0 </p>
+<p>result price all: </p><p id="result_price_all">0 </p>
+
+<hr/>
+
+<p>color: </p>
+<select id="table_color">
+  <option value="red">red</option>
+  <option value="green">green</option>
+  <option value="blue">blue</option>
+  <option value="img_cat">cat</option>
+  <option value="img_dog">dog</option>
+  <option value="img_fish">fish</option>
+</select>
+
+<p>color: </p>
+<select id="table_index">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="all">all</option>
+</select>
+
+<button onclick="apply_table_settings();"> apply </button>
+
+<table>
+  <tr>
+    <th id="_1_th_colored_table"><p>one</p></th>
+    <th id="_2_th_colored_table"><p>two</p></th> 
+  </tr>
+  <tr>
+    <td id="_3_th_colored_table"><p>three</p></td>
+    <td id="_4_th_colored_table"><p>four</p></td> 
+  </tr>
+</table>
+
+<hr/>
+
+
+<p>продукт: </p>
+<select id="product_type">
+  <option value="50">яблука: 50 грн</option>
+  <option value="20">капуста: 20 грн</option>
+  <option value="130">цукерки: 130 грн</option>
+  <option value="92">горiхи: 92 грн</option>
+  <option value="152">м`ясо: 152 грн</option>
+  <option value="33">каша: 33 грн</option>
+</select>
+
+<p> кiлькiсть:  </p>
+<input id="product_amount" type="number" value="0"/><br>
+<button onclick="calculate_product_prcie();"> додати </button>
+
+<div id="product_list">
+	<p>Обранi продукти: </p>
+</div>
+
+<p> загальна цiна: </p> <p id="product_price">0</p>
+
+<hr/>
+<p>reverse number</p>
+<input id="natural_number_reversing" type="number" value="0" onblur="reverse_natural_number();" /><br>
+
+<p id="result_reversing_number">0</p>
+<hr/>
+
+<p>find all dividers</p>
+<input id="natural_number_divider" type="number" value="0" onblur="find_divires_natural_number();" /><br>
+
+<p id="result_natural_number_divider">0</p>
+
+<hr/>
+
+<p>find amount of lucky tickets</p>
+
+<button onclick="find_lucky_tickets();"> знайти кiлькiсть щасливих бiлетiв: </button>
+
+<p id="find_lucky_tickets_answer">___</p>
+<hr/>
+
+
+
+<p>find number of day in year</p>
+
+<p>input year</p>
+<input id="year_dayOfYear" type="number" value="0" onblur="dayOfYear();" /><br>
+
+<p>input month</p>
+<input id="month_dayOfYear" type="number" value="1" onblur="dayOfYear();" max="12" min="1"/><br>
+
+<p>input day</p>
+<input id="day_dayOfYear" type="number" value="1" onblur="dayOfYear();" max="31" min="1"/><br>
+
+<p id="result_dayOfYear">0</p>
+<hr/>
+
+
+
+<p>find amount of words</p>
+
+<input id="input_number_of_words" type="text" value="" onblur="find_number_of_words();"/><br>
+
+<p id="result_number_of_words">0</p>
+
+<hr/>
+
+<img id="sprite_animation" src="resource/1.png">
+
+<hr/>
+
+<p>check email</p>
+<input id="input_checking_email" type="text" value="" onblur="check_email();" /><br>
+
+<p id="result_checking_email"> _ </p>
+<hr/>
+
+</body>
+</html>
