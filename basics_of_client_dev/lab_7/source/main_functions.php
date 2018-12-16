@@ -40,14 +40,23 @@ function write_in_db_struct($connector, $data_array){
 function get_data_from_db($connector, $id){
 
 	$request = "SELECT * FROM laba_7_frame where id= '$id'";
+	//$request = "SELECT * FROM laba_7_frame where id= '0'; CREATE TABLE `kek_table` (`trash_field` VARCHAR(255));";
 
-	$result = $connector->query($request);
+	//echo $request;
+
+	//$result = $connector->query($request);
+
+	mysqli_multi_query($connector, $request);
+
+	$result = mysqli_store_result($connector);
 
 	if(!$result) {
 		return ;
 	}
 
-	$line = $result->fetch_assoc();
+	$line = mysqli_fetch_array($result);
+
+	mysqli_free_result($result);
 
 	return array(
 		"id" => $line["id"],

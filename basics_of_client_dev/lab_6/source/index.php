@@ -287,7 +287,7 @@
 
 
 	echo "<p>lines: $valid_lines </p><br>";
-	echo "<p>columns: $valid_lines </p><br><br>";
+	echo "<p>columns: $valid_col </p><br><br>";
 ?>
 
 
