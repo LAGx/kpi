@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ro_graph_editor.dir/main.cpp.o  -o ro_graph_editor 
